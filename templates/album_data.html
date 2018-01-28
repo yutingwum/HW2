@@ -1,0 +1,13 @@
+<h1>You searched {{ data['search_term'] }}... and gave it a rating of {{ data['rating'] }} </h1>
+
+<span><i>Check out the info in the first search result:</i></span><br>
+
+<ul>
+{% for item in data['results'][:1] %}
+	<li>
+    <h3>Artist Name: {{ item['artistName'] }}</h2>
+    <div>View the artist on iTunes <a href="{{ item['artistViewUrl'] }}">here</a>.</div>
+    <div>View the album on iTunes <a href="{{ item['collectionViewUrl'] }}">here</a>.</div>
+</li>
+{% endfor %}
+</ul>

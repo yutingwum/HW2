@@ -1,0 +1,15 @@
+<html>
+<title>
+</title>
+<body>
+<form method = "POST" action="http://localhost:5000/album_result">
+  {{ form.hidden_tag() }}
+  {% for message in get_flashed_messages() %}
+  {{ message }}
+  {% endfor %}
+<h3>EEnter the name of an album: {{ form.album_name() }}</h3>
+<h3>How much do you like this album? (1 low, 3 high) {{ form.rating() }}</h3>
+{{ form.submit() }}
+</form>
+</body>
+</html>
